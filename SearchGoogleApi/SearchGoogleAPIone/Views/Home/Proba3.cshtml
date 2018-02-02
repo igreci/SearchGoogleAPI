@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SearchGoogleAPIone.GoogleApi.Item>
+
+@{
+    ViewBag.Title = "Proba3";
+    string search = ViewBag.Search;
+}
+
+<h2>Rezultati</h2>
+
+
+<div class="row">
+    <div class="col-md-3">
+        @Html.ActionLink("Spremi u Excel formatu", "ExcelFile", new { id = search})
+    </div>
+    <div class="col-md-7">
+        @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+    {
+        <div class="form-group">
+            @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Pretraži rezultat" })
+        </div>
+        <button type="submit" class="btn btn-default">Pretraži</button>
+}
+    </div>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.title)*@
+            Naslov
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.link)*@
+            Poveznica
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.snippet)*@
+            Opis
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.link)*@
+            <a href="@item.link">Link</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.snippet)
+        </td>
+    </tr>
+}
+
+</table>

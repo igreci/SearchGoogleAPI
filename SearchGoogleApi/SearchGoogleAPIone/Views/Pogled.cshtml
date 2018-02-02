@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SearchGoogleAPIone.GoogleApi.Item>
+
+@{
+    ViewBag.Title = "Pogled";
+}
+
+<h2>Pogled</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.kind)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.htmlTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.displayLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.snippet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.htmlSnippet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cacheId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formattedUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.htmlFormattedUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.kind)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.htmlTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.displayLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.snippet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.htmlSnippet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cacheId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formattedUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.htmlFormattedUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SearchGoogleAPIone.GoogleApi.Item>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<p>
+    <a href="javascript:history.back()" class="col-md-3">Natrag</a>
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.title)*@
+            Naslov
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.link)*@
+            Poveznica
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.snippet)*@
+            Opis
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.snippet)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pretraživanje</h2>
+
+<div class="jumbotron">
+    @using (Html.BeginForm())
+    {
+        <input type="text" name="searchString" value="" placeholder="Upišite pojam ..." required />
+        <input type="submit" value="Traži ..." /><br />
+    }
+</div>
